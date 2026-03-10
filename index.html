@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan de Casa | Panadería Artesanal</title>
+    <!-- Fuentes Globales: Playfair Display y Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@600;700&family=Lato:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5C3D2E',    // Marrón Café
+                        secondary: '#D4A373',  // Dorado Tierra
+                        accent: '#8B9A47',     // Verde Salvia
+                        body: '#4A4A4A',       // Gris Carbón
+                        bgWarm: '#FDF8F2',     // Crema Cálido
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                        cta: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FDF8F2; color: #5C3D2E; }
+        .hero-overlay { background: rgba(253, 248, 242, 0.4); }
+        .product-card:hover { transform: translateY(-8px); transition: all 0.3s ease; }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            padding: 12px 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-bgWarm/90 backdrop-blur-md border-b border-primary/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-serif font-bold tracking-tight text-primary">Pan de Casa</div>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#" class="hover:text-secondary transition">Inicio</a>
+                <a href="#historia" class="hover:text-secondary transition">Nosotros</a>
+                <a href="#productos" class="hover:text-secondary transition">Productos</a>
+                <a href="#contacto" class="hover:text-secondary transition">Contacto</a>
+            </nav>
+            <a href="https://wa.me/#" class="bg-accent text-white px-6 py-2 rounded-full font-cta text-sm uppercase tracking-wider hover:bg-opacity-90 transition">
+                Hacer Pedido
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[85vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Simulación de imagen de fondo -->
+            <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center"></div>
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-2xl">
+                <h1 class="font-serif text-5xl md:text-7xl leading-tight mb-6">
+                    El aroma de lo recién horneado en <span class="text-secondary">[Ciudad]</span>.
+                </h1>
+                <p class="text-lg md:text-xl text-body mb-8 leading-relaxed">
+                    Pan artesanal de masa madre, repostería casera y momentos dulces creados para compartir. Hecho a mano, cada día.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#" class="bg-primary text-white px-8 py-4 rounded-md font-cta text-center uppercase tracking-widest hover:bg-opacity-90 transition shadow-lg">
+                        Ver Menú en WhatsApp
+                    </a>
+                    <a href="#productos" class="border-2 border-primary text-primary px-8 py-4 rounded-md font-cta text-center uppercase tracking-widest hover:bg-primary hover:text-white transition">
+                        Nuestras Variedades
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historia -->
+    <section id="historia" class="py-20 bg-white">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="rounded-2xl overflow-hidden shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1581339399838-2a120c18bba3?auto=format&fit=crop&q=80&w=800" alt="Proceso artesanal" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <h2 class="font-serif text-4xl mb-6">Pasión por el pan de verdad.</h2>
+                <p class="text-body text-lg mb-6 leading-relaxed">
+                    En <strong>Pan de Casa</strong>, creemos que el buen pan requiere tiempo. Por eso utilizamos procesos de lenta fermentación y masa madre propia, logrando sabores intensos y una digestión ligera.
+                </p>
+                <p class="text-body text-lg mb-6 leading-relaxed">
+                    Somos tu panadería artesanal de confianza en [Ciudad], comprometidos con la salud y el sabor tradicional que recordamos de casa.
+                </p>
+                <div class="flex gap-4">
+                    <div class="text-center">
+                        <span class="block text-3xl font-serif text-secondary">24h</span>
+                        <span class="text-xs uppercase text-body tracking-tighter">Fermentación</span>
+                    </div>
+                    <div class="w-[1px] bg-primary/20 h-12"></div>
+                    <div class="text-center">
+                        <span class="block text-3xl font-serif text-secondary">100%</span>
+                        <span class="text-xs uppercase text-body tracking-tighter">Natural</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="productos" class="py-20 bg-bgWarm">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="font-serif text-4xl mb-4">Lo que horneamos para ti</h2>
+                <p class="text-body">Cada pieza es única, elaborada con ingredientes seleccionados de proveedores locales.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm product-card border border-primary/5">
+                    <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&q=80&w=600" alt="Pan Masa Madre" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl mb-2">Pan de Masa Madre</h3>
+                        <p class="text-body text-sm mb-4 italic">Corteza crujiente, alma suave y alveolada.</p>
+                        <button class="text-secondary font-bold text-sm uppercase tracking-widest hover:underline">Pedir ahora →</button>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm product-card border border-primary/5">
+                    <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&q=80&w=600" alt="Bollería" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl mb-2">Bollería Fina</h3>
+                        <p class="text-body text-sm mb-4 italic">Cinnamon rolls y croissants de pura mantequilla.</p>
+                        <button class="text-secondary font-bold text-sm uppercase tracking-widest hover:underline">Pedir ahora →</button>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm product-card border border-primary/5">
+                    <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600" alt="Postres" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl mb-2">Postres de Casa</h3>
+                        <p class="text-body text-sm mb-4 italic">Galletas, brownies y pasteles por encargo.</p>
+                        <button class="text-secondary font-bold text-sm uppercase tracking-widest hover:underline">Pedir ahora →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-secondary text-5xl mb-6">“</div>
+                <p class="text-2xl font-serif italic mb-8">
+                    "Los postres artesanales más ricos de [Ciudad]. El pan de masa madre dura días perfecto y el trato es súper cercano. Se nota el amor en cada pedido."
+                </p>
+                <div class="font-cta uppercase tracking-widest text-sm text-secondary">— María R., Vecina y Cliente Feliz</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-white py-16 border-t border-primary/10">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 text-body">
+            <div>
+                <div class="text-2xl font-serif font-bold text-primary mb-6">Pan de Casa</div>
+                <p class="text-sm">Tu panadería artesanal de confianza. Horneamos momentos felices para tu familia.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-primary uppercase text-xs tracking-widest">Horarios</h4>
+                <p class="text-sm italic">Lunes a Sábado</p>
+                <p class="text-sm">8:00 AM - 8:00 PM</p>
+                <p class="text-sm italic mt-2">Domingos</p>
+                <p class="text-sm">9:00 AM - 2:00 PM</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-primary uppercase text-xs tracking-widest">Ubicación</h4>
+                <p class="text-sm text-secondary underline mb-2">Calle Ejemplo 123, [Ciudad]</p>
+                <p class="text-sm">Envíos a domicilio disponibles.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-primary uppercase text-xs tracking-widest">Síguenos</h4>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-secondary">Instagram</a>
+                    <a href="#" class="hover:text-secondary">Facebook</a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-16 pt-8 border-t border-primary/5 text-center text-xs uppercase tracking-widest text-body/60">
+            © 2024 Pan de Casa - Repostería y Panadería Artesanal
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/#" class="whatsapp-float">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-2.31 0-4.417.91-5.975 2.457-1.6 1.588-2.481 3.7-2.481 5.947 0 1.848.583 3.611 1.684 5.067l-1.076 3.931 4.029-1.055c1.42.82 3.033 1.254 4.693 1.254 5.006 0 9.08-4.073 9.08-9.08 0-2.425-.945-4.704-2.659-6.419-1.716-1.714-3.996-2.659-6.418-2.659h-.001zm.004 1.708c1.956 0 3.791.762 5.167 2.14 1.378 1.377 2.138 3.212 2.138 5.168 0 4.038-3.284 7.323-7.323 7.323-1.464 0-2.884-.44-4.095-1.265l-.293-.199-2.403.629.639-2.336-.219-.35c-.888-1.41-1.359-3.051-1.359-4.735 0-1.956.763-3.793 2.14-5.172 1.378-1.379 3.213-2.141 5.168-2.141z"/></svg>
+        Hacer Pedido
+    </a>
+
+</body>
+</html>
